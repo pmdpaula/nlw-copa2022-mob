@@ -1,7 +1,9 @@
-import { createContext, ReactNode, useEffect, useState } from 'react';
+// eslint-disable-next-line import/no-unresolved
+import { GOOGLE_ID } from '@env';
 import * as AuthSession from 'expo-auth-session';
-import * as WebBrowser from 'expo-web-browser';
 import * as Google from 'expo-auth-session/providers/google';
+import * as WebBrowser from 'expo-web-browser';
+import { createContext, ReactNode, useEffect, useState } from 'react';
 
 WebBrowser.maybeCompleteAuthSession(); // garatia do redirecionamento do web browser na autenticação
 
@@ -27,9 +29,8 @@ export const AuthContextProvider = ({ children }: AuthProviderProps) => {
   const [isUserLoading, setIsUserLoading] = useState(false);
 
   const [request, response, prompAsync] = Google.useAuthRequest({
-    // clientId: process.env.GOOGLE_ID,
-    clientId:
-      '942833079391-6bksr3uclrb2ldgnd854j8a61618i278.apps.googleusercontent.com',
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    clientId: GOOGLE_ID,
     redirectUri: AuthSession.makeRedirectUri({ useProxy: true }),
     scopes: ['profile', 'email'],
   });
@@ -50,7 +51,6 @@ export const AuthContextProvider = ({ children }: AuthProviderProps) => {
 
   const signInWithGoogle = (acess_token: string) => {
     console.log('TOKEN ==> ', acess_token);
-    // console.log(acess_token);
   };
 
   useEffect(() => {

@@ -1,22 +1,25 @@
-import { Button as ButtonNB, Text, IButtonProps } from 'native-base';
-import React from 'react';
+import { Button as ButtonNativeBase, IButtonProps, Text } from 'native-base';
 
 interface Props extends IButtonProps {
   title: string;
   type?: 'PRIMARY' | 'SECONDARY';
 }
 
-const Button = ({ title, type, ...rest }: Props) => {
+export function Button({ title, type = 'PRIMARY', ...rest }: Props) {
   return (
-    <ButtonNB
+    <ButtonNativeBase
       w="full"
       h={14}
       rounded="sm"
       fontSize="md"
       textTransform="uppercase"
       bg={type === 'SECONDARY' ? 'red.500' : 'yellow.500'}
-      _pressed={{ bg: type === 'SECONDARY' ? 'red.700' : 'yellow.800' }}
-      _loading={{ _spinner: { color: 'black' } }}
+      _pressed={{
+        bg: type === 'SECONDARY' ? 'red.400' : 'yellow.600',
+      }}
+      _loading={{
+        _spinner: { color: 'black' },
+      }}
       {...rest}
     >
       <Text
@@ -26,8 +29,6 @@ const Button = ({ title, type, ...rest }: Props) => {
       >
         {title}
       </Text>
-    </ButtonNB>
+    </ButtonNativeBase>
   );
-};
-
-export default Button;
+}

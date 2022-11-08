@@ -38,6 +38,7 @@ module.exports = {
     // 'import/no-unresolved': 'off',
     'import/namespace': 'off',
     '@typescript-eslint/no-misused-promises': 'off',
+    '@typescript-eslint/no-empty-function': 'warn',
   },
   settings: {
     react: {
