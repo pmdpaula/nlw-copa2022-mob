@@ -59,7 +59,6 @@ npx expo install expo-auth-session expo-random
 ```
 
 
-
 - web-browser
 Documentação na página da [expo-web-browser](https://docs.expo.dev/versions/latest/sdk/webbrowser/)
 
@@ -67,10 +66,37 @@ Documentação na página da [expo-web-browser](https://docs.expo.dev/versions/l
 npx expo install expo-web-browser
 ```
 
+### Outros pacotes
 
+- phosphor-react-native
+[phosphor-react-native](https://github.com/duongdev/phosphor-react-native)
 
+```
+yarn add phosphor-react-native
+```
 
+- country-list
+[country-list](https://github.com/fannarsh/country-list)
 
+```
+yarn add country-list
+yarn add -D @types/country-list
+```
+
+- react-native-country-flag
+[react-native-country-flag](https://github.com/YannisHofmann/react-native-country-flag)
+
+```
+yarn add react-native-country-flag
+```
+
+- react-native-dotenv
+[react-native-dotenv](https://github.com/goatandsheep/react-native-dotenv)
+Será necessário alterar/criar alguns arquivos. Ver documentação.
+
+```
+yarn add -D react-native-dotenv
+```
 
 ## Extras
 
